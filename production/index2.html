@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <script src="http://api.map.baidu.com/api?v=2.0&ak=jUQW0AklKomlWlMfDYG0z3ZWSrGu52we"></script>
+    <script src="../build/js/echarts.min.js"></script>
+    <script src="../build/js/echarts-gl.min.js"></script>
+    <script src="../build/js/bmap.min.js"></script>
+    <script src="../build/js/china.js"></script>
+    <script src="../build/js/world.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="images/favicon.ico" type="image/ico" />
+  
+
+    <title> 域名详情 </title>
+
+    <!-- Bootstrap -->
+    <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="../vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+	
+    <!-- bootstrap-progressbar -->
+    <link href="../vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+    <!-- JQVMap -->
+    <link href="../vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
+    <!-- bootstrap-daterangepicker -->
+    <link href="../vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="../build/css/custom.css" rel="stylesheet">
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">
+            <div class="navbar nav_title" style="border: 0;">
+              <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>www.mipay.com</span></a>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <!-- menu profile quick info -->
+            <div class="profile clearfix">
+              <div class="profile_pic">
+                <img src="images/img.jpg" alt="..." class="img-circle profile_img">
+              </div>
+              <div class="profile_info">
+                <span>Welcome,</span>
+                <h2>Juntaran</h2>
+              </div>
+            </div>
+            <!-- /menu profile quick info -->
+
+            <br />
+
+            <!-- sidebar menu -->
+            
+
+            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                <div class="menu_section">
+                  <ul class="nav side-menu">
+                      <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                          <li><a href="index3.html">Miui</a></li>
+                        </ul>
+                      </li>
+                    <li><a><i class="fa fa-edit"></i> 一级服务 <span class="fa fa-chevron-down"></span></a>
+                      <ul class="nav child_menu">
+                        <li><a href="index.html">Cash</a></li>
+                        <li><a href="index.html">Fi</a></li>
+                        <li><a href="index.html">Mibi</a></li>
+                        <li><a href="index.html">Ad</a></li>
+                      </ul>
+                    </li>
+                    <li><a><i class="fa fa-edit"></i> 二级服务 <span class="fa fa-chevron-down"></span></a>
+                      <ul class="nav child_menu">
+                        <li><a href="index.html">Cash</a></li>
+                        <li><a href="index.html">Fi</a></li>
+                        <li><a href="index.html">Mibi</a></li>
+                        <li><a href="index.html">Ad</a></li>
+                      </ul>
+                    </li>
+                    <li><a><i class="fa fa-edit"></i> 三级服务 <span class="fa fa-chevron-down"></span></a>
+                      <ul class="nav child_menu">
+                        <li><a href="index.html">Cash</a></li>
+                        <li><a href="index.html">Fi</a></li>
+                        <li><a href="index.html">Mibi</a></li>
+                        <li><a href="index.html">Ad</a></li>
+                      </ul>
+                    </li>
+                  
+                  </ul>
+                </div>
+              </div>
+            <!-- /sidebar menu -->
+
+            <!-- /menu footer buttons -->
+            <div class="sidebar-footer hidden-small">
+              <a data-toggle="tooltip" data-placement="top" title="Settings">
+                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="Lock">
+                <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
+                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+              </a>
+            </div>
+            <!-- /menu footer buttons -->
+          </div>
+        </div>
+
+        <!-- top navigation -->
+        <div class="top_nav">
+          <div class="nav_menu">
+            <nav>
+              <div class="nav toggle">
+                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+              </div>
+
+              <ul class="nav navbar-nav navbar-right">
+                <li class="">
+                  <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    <img src="images/img.jpg" alt="">Juntaran
+                    <span class=" fa fa-angle-down"></span>
+                  </a>
+                  <ul class="dropdown-menu dropdown-usermenu pull-right">
+                    <li><a href="javascript:;"> Profile</a></li>
+                    <li>
+                      <a href="javascript:;">
+                        <span class="badge bg-red pull-right">50%</span>
+                        <span>Settings</span>
+                      </a>
+                    </li>
+                    <li><a href="javascript:;">Help</a></li>
+                    <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                  </ul>
+                </li>
+
+                <li role="presentation" class="dropdown">
+                  <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
+                    <li>
+                      <a>
+                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                        <span>
+                          <span>Juntaran</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a>
+                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                        <span>
+                          <span>Juntaran</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a>
+                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                        <span>
+                          <span>Juntaran</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a>
+                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                        <span>
+                          <span>Juntaran</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <div class="text-center">
+                        <a>
+                          <strong>See All Alerts</strong>
+                          <i class="fa fa-angle-right"></i>
+                        </a>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <!-- /top navigation -->
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+          
+          <!-- top tiles -->
+          <div class="row tile_count">
+            <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+              <span class="count_top"><i class="fa fa-smile-o"></i> PV</span>
+              <div class="count">1000,000</div>
+              <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i> 10.03% </i> From Yesterday</span>
+            </div>
+          </div>
+          <!-- /top tiles -->
+
+          <div class="row">
+
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <div class="x_panel tile fixed_height_350">
+                <div class="x_title">
+                  <h2>QPS </h2>
+                  <ul class="nav navbar-right panel_toolbox">
+                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                    <li><a class="close-link"><i class="fa fa-close"></i></a>
+                    </li>
+                  </ul>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                  <canvas id="qps"></canvas>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <div class="x_panel tile fixed_height_350">
+                <div class="x_title">
+                  <h2>Request Time </h2>
+                  <ul class="nav navbar-right panel_toolbox">
+                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                    <li><a class="close-link"><i class="fa fa-close"></i></a>
+                    </li>
+                  </ul>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                  <canvas id="requestTime"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <div class="x_panel tile fixed_height_350">
+                <div class="x_title">
+                  <h2>Status Success Code </h2>
+                  <ul class="nav navbar-right panel_toolbox">
+                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                    <li><a class="close-link"><i class="fa fa-close"></i></a>
+                    </li>
+                  </ul>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                  <canvas id="statusSuccessCode"></canvas>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <div class="x_panel tile fixed_height_350">
+                <div class="x_title">
+                  <h2>Status Error Code </h2>
+                  <ul class="nav navbar-right panel_toolbox">
+                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                    <li><a class="close-link"><i class="fa fa-close"></i></a>
+                    </li>
+                  </ul>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                  <canvas id="statusErrorCode"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <div class="x_panel tile fixed_height_350">
+                <div class="x_title">
+                  <h2>带宽 In </h2>
+                  <ul class="nav navbar-right panel_toolbox">
+                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                    <li><a class="close-link"><i class="fa fa-close"></i></a>
+                    </li>
+                  </ul>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                  <canvas id="lineChart"></canvas>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <div class="x_panel tile fixed_height_350">
+                <div class="x_title">
+                  <h2>带宽 Out </h2>
+                  <ul class="nav navbar-right panel_toolbox">
+                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                    <li><a class="close-link"><i class="fa fa-close"></i></a>
+                    </li>
+                  </ul>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                  <canvas id="lineChart2"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br />
+
+          
+
+
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12"></div>
+            <div id="main" style="height:800px;"></div>
+            <script type="text/javascript">
+              // 基于准备好的dom，初始化echarts实例
+              var myChart = echarts.init(document.getElementById('main'));
+              // 指定图表的配置项和数据
+              var data = [
+                  {name: '北京', value: 1000},
+                  {name: '法兰克福', value: 200},
+                  {name: '新加坡', value: 333},
+                  {name: '印度', value: 200}
+              ];
+              var geoCoordMap = {
+                  '北京':[116.46,39.92],
+                  '法兰克福':[14.32,52.2],
+                  '新加坡':[103.45,1.22],
+                  '印度':[72,22]
+              };
+
+              var convertData = function (data) {
+                  var res = [];
+                  for (var i = 0; i < data.length; i++) {
+                      var geoCoord = geoCoordMap[data[i].name];
+                      if (geoCoord) {
+                          res.push({
+                              name: data[i].name,
+                              value: geoCoord.concat(data[i].value)
+                          });
+                      }
+                  }
+                  return res;
+              };
+
+              option = {
+                  title: {
+                      text: '热力图',
+                      left: 'center'
+                  },
+                  tooltip : {
+                      trigger: 'item'
+                  },
+                  bmap: {
+                      center: [104.114129, 37.550339],
+                      zoom: 3,
+                      roam: true,
+                      mapStyle: {
+                          styleJson: [{
+                              'featureType': 'water',
+                              'elementType': 'all',
+                              'stylers': {
+                                  'color': '#fdfdfd'
+                              }
+                          }, {
+                              'featureType': 'land',
+                              'elementType': 'all',
+                              'stylers': {
+                                  'color': '#8FBDB1'
+                              }
+                          }, {
+                              'featureType': 'railway',
+                              'elementType': 'all',
+                              'stylers': {
+                                  'visibility': 'off'
+                              }
+                          }, {
+                              'featureType': 'highway',
+                              'elementType': 'all',
+                              'stylers': {
+                                  'color': '#fdfdfd'
+                              }
+                          }, {
+                              'featureType': 'highway',
+                              'elementType': 'labels',
+                              'stylers': {
+                                  'visibility': 'off'
+                              }
+                          }, {
+                              'featureType': 'arterial',
+                              'elementType': 'geometry',
+                              'stylers': {
+                                  'color': '#fefefe'
+                              }
+                          }, {
+                              'featureType': 'arterial',
+                              'elementType': 'geometry.fill',
+                              'stylers': {
+                                  'color': '#fefefe'
+                              }
+                          }, {
+                              'featureType': 'poi',
+                              'elementType': 'all',
+                              'stylers': {
+                                  'visibility': 'off'
+                              }
+                          }, {
+                              'featureType': 'green',
+                              'elementType': 'all',
+                              'stylers': {
+                                  'visibility': 'off'
+                              }
+                          }, {
+                              'featureType': 'subway',
+                              'elementType': 'all',
+                              'stylers': {
+                                  'visibility': 'off'
+                              }
+                          }, {
+                              'featureType': 'manmade',
+                              'elementType': 'all',
+                              'stylers': {
+                                  'color': '#d1d1d1'
+                              }
+                          }, {
+                              'featureType': 'local',
+                              'elementType': 'all',
+                              'stylers': {
+                                  'color': '#d1d1d1'
+                              }
+                          }, {
+                              'featureType': 'arterial',
+                              'elementType': 'labels',
+                              'stylers': {
+                                  'visibility': 'off'
+                              }
+                          }, {
+                              'featureType': 'boundary',
+                              'elementType': 'all',
+                              'stylers': {
+                                  'color': '#fefefe'
+                              }
+                          }, {
+                              'featureType': 'building',
+                              'elementType': 'all',
+                              'stylers': {
+                                  'color': '#d1d1d1'
+                              }
+                          }, {
+                              'featureType': 'label',
+                              'elementType': 'labels.text.fill',
+                              'stylers': {
+                                  'color': '#999999'
+                              }
+                          }]
+                      }
+                  },
+                  series : [
+                      {
+                          name: 'pm2.5',
+                          type: 'scatter',
+                          coordinateSystem: 'bmap',
+                          data: convertData(data),
+                          symbolSize: function (val) {
+                              return val[2] / 10;
+                          },
+                          label: {
+                              normal: {
+                                  formatter: '{b}',
+                                  position: 'right',
+                                  show: false
+                              },
+                              emphasis: {
+                                  show: true
+                              }
+                          },
+                          itemStyle: {
+                              normal: {
+                                  color: 'purple'
+                              }
+                          }
+                      },
+                      {
+                          name: '量',
+                          type: 'effectScatter',
+                          coordinateSystem: 'bmap',
+                          data: convertData(data.sort(function (a, b) {
+                              return b.value - a.value;
+                          }).slice(0, 6)),
+                          symbolSize: function (val) {
+                              return val[2] / 10;
+                          },
+                          showEffectOn: 'render',
+                          rippleEffect: {
+                              brushType: 'stroke'
+                          },
+                          hoverAnimation: true,
+                          label: {
+                              normal: {
+                                  formatter: '{b}',
+                                  position: 'right',
+                                  show: true
+                              }
+                          },
+                          itemStyle: {
+                              normal: {
+                                  color: '#215445',
+                                  shadowBlur: 10,
+                                  shadowColor: '#333'
+                              }
+                          },
+                          zlevel: 1
+                      }
+                  ]
+              };
+      
+              // 使用刚指定的配置项和数据显示图表。
+              myChart.setOption(option);
+          </script>
+          </div>
+        </div>
+        <!-- /page content -->
+
+        <!-- footer content -->
+        <footer>
+          <div class="pull-right">
+            Miui Sre
+          </div>
+          <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="../vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="../vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="../vendors/nprogress/nprogress.js"></script>
+    <!-- Chart.js -->
+    <script src="../vendors/Chart.js/dist/Chart.min.js"></script>
+    <!-- gauge.js -->
+    <script src="../vendors/gauge.js/dist/gauge.min.js"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="../vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+    <!-- iCheck -->
+    <script src="../vendors/iCheck/icheck.min.js"></script>
+    <!-- Skycons -->
+    <script src="../vendors/skycons/skycons.js"></script>
+    <!-- Flot -->
+    <script src="../vendors/Flot/jquery.flot.js"></script>
+    <script src="../vendors/Flot/jquery.flot.pie.js"></script>
+    <script src="../vendors/Flot/jquery.flot.time.js"></script>
+    <script src="../vendors/Flot/jquery.flot.stack.js"></script>
+    <script src="../vendors/Flot/jquery.flot.resize.js"></script>
+    <!-- Flot plugins -->
+    <script src="../vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
+    <script src="../vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
+    <script src="../vendors/flot.curvedlines/curvedLines.js"></script>
+    <!-- DateJS -->
+    <script src="../vendors/DateJS/build/date.js"></script>
+    <!-- JQVMap -->
+    <script src="../vendors/jqvmap/dist/jquery.vmap.js"></script>
+    <script src="../vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+    <script src="../vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src="../vendors/moment/min/moment.min.js"></script>
+    <script src="../vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="../build/js/custom.js"></script>
+	
+  </body>
+</html>
