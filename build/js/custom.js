@@ -3145,7 +3145,7 @@ if (typeof NProgress != 'undefined') {
                     trigger: 'axis'
                   },
                   legend: {
-                    data: ['可用度']
+                    data: ['今日可用度']
                   },
                   toolbox: {
                       show : true,
@@ -3167,7 +3167,7 @@ if (typeof NProgress != 'undefined') {
                     min: 99,
                   }],
                   series: [{
-                      name:'可用度',
+                      name:'今日可用度',
                       type:'bar',
                       data:[99.91, 99.96, 99.94, 99.93, 99.91, 99.96, 99.94, 99.93],
                       markLine : {

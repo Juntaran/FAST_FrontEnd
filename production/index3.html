@@ -227,9 +227,201 @@
                 </div>
             </div>
 
+
             <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div id="main" style="width: 1250px;height:800px"></div>
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>一级服务今日可用度</h2>
+                    <div id="guanxi" style="height:500px"></div>
+                    <script type="text/javascript">
+                    // 基于准备好的dom，初始化echarts实例
+                    var myChart = echarts.init(document.getElementById('guanxi'));
+        
+                    // 指定图表的配置项和数据
+                    var option = {
+                      backgroundColor: new echarts.graphic.RadialGradient(0.3, 0.3, 0.8, [{
+                          offset: 0,
+                          color: '#FFFFFF'
+                      }, {
+                          offset: 1,
+                          color: '#FFFFFF'
+                      }]),
+                         title:{
+                          text: "MIUI SRE",
+                          top: "top",
+                          left: "center"
+                      },
+                        tooltip: {},
+                        legend: [{
+                            formatter: function (name) {
+                          return echarts.format.truncateText(name, 200, '20px Microsoft Yahei', '…');
+                      },
+                      tooltip: {
+                          show: true
+                      },
+                            selectedMode: 'false',
+                            bottom: 20,
+                            data: ['小米金服', '商业产品', 'MIUI应用']
+                        }],
+                        toolbox: {
+                          show : true,
+                          feature : {
+                              dataView : {show: true, readOnly: true},
+                              restore : {show: true},
+                              saveAsImage : {show: true}
+                          }
+                      },
+                        animationDuration: 3000,
+                        animationEasingUpdate: 'quinticInOut',
+                        series: [{
+                            name: 'MIUI',
+                            type: 'graph',
+                            layout: 'force',
+                  
+                            force: {
+                                repulsion: 500
+                            },
+                            data: [{
+                                "name": "MIUI",
+                                // "x": 0,
+                                // y: 0,
+                                "symbolSize": 50,
+                                "draggable": "true",
+                                "value": 99.98
+                  
+                            }, {
+                                "name": "小米金服",
+                                "symbolSize": 30,
+                                "category": "小米金服",
+                                "draggable": "true",
+                                "value": 99.98
+                            }, {
+                                "name": "cash",
+                                "symbolSize": 10,
+                                "category": "小米金服",
+                                "draggable": "true",
+                                "value": 99.99
+                            }, {
+                                "name": "nfcpay",
+                                "symbolSize": 10,
+                                "category": "小米金服",
+                                "draggable": "true",
+                                "value": 99.98
+                            }, {
+                                "name": "fi",
+                                "symbolSize": 10,
+                                "category": "小米金服",
+                                "draggable": "true",
+                                "value": 99.95
+                            }, {
+                                "name": "商业产品",
+                                "symbolSize": 20,
+                                "category": "商业产品",
+                                "draggable": "true",
+                                "value": 99.98
+                            }, {
+                                "name": "ad",
+                                "symbolSize": 10,
+                                "category": "商业产品",
+                                "draggable": "true",
+                                "value": 99.98
+                            }, {
+                                "name": "mistate",
+                                "symbolSize": 10,
+                                "category": "商业产品",
+                                "draggable": "true",
+                                "value": 99.97
+                            }, {
+                                "name": "MIUI应用",
+                                "symbolSize": 20,
+                                "category": "MIUI应用",
+                                "draggable": "true",
+                                "value": 99.98
+                            }, {
+                                "name": "weather",
+                                "symbolSize": 10,
+                                "category": "MIUI应用",
+                                "draggable": "true",
+                                "value": 99.97
+                            }, {
+                                "name": "browser",
+                                "symbolSize": 10,
+                                "category": "MIUI应用",
+                                "draggable": "true",
+                                "value": 99.97
+                            }],
+                            links: [{
+                                "source": "MIUI",
+                                "target": "小米金服"
+                            }, {
+                                "source": "小米金服",
+                                "target": "cash"
+                            }, {
+                                "source": "小米金服",
+                                "target": "nfcpay"
+                            }, {
+                                "source": "小米金服",
+                                "target": "fi"
+                            }, {
+                                "source": "MIUI",
+                                "target": "商业产品"
+                            }, {
+                                "source": "商业产品",
+                                "target": "ad"
+                            }, {
+                                "source": "商业产品",
+                                "target": "mistate"
+                            }, {
+                                "source": "MIUI",
+                                "target": "MIUI应用"
+                            }, {
+                                "source": "MIUI应用",
+                                "target": "weather"
+                            }, {
+                                "source": "MIUI应用",
+                                "target": "browser"
+                            }],
+                            categories: [{
+                                'name': '小米金服'
+                            }, {
+                                'name': '商业产品'
+                            }, {
+                                'name': 'MIUI应用'
+                            }],
+                            focusNodeAdjacency: true,
+                            roam: true,
+                            label: {
+                                normal: {
+                  
+                                    show: true,
+                                    position: 'top',
+                  
+                                }
+                            },
+                            lineStyle: {
+                                normal: {
+                                    color: 'source',
+                                    curveness: 0,
+                                    type: "solid"
+                                }
+                            }
+                        }]
+                    };
+                        // 使用刚指定的配置项和数据显示图表。
+                        myChart.setOption(option);
+                    </script>
+                  <div class="clearfix"></div>
+                  </div>
+              </div>
+          </div>
+
+
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <div id="main" style="height:700px"></div>
                     <script type="text/javascript">
                     // 基于准备好的dom，初始化echarts实例
                     var myChart = echarts.init(document.getElementById('main'));
@@ -287,11 +479,10 @@
                         // 使用刚指定的配置项和数据显示图表。
                         myChart.setOption(option);
                     </script>
-        
-                </div>
-                </div>
-            </div>
-          
+                  <div class="clearfix"></div>
+                  </div>
+              </div>
+          </div>
 
         <!-- /page content -->
 
