@@ -332,41 +332,265 @@
               </div>
             </div>
 
-            <div class="col-md-4 col-sm-4 col-xs-12">
-              <div class="x_panel tile fixed_height_320">
+            <div class="col-md-8 col-sm-8 col-xs-8">
+              <div class="x_panel tile fixed_height_300">
                 <div class="x_title">
-                  <h2>带宽 In </h2>
-                  <ul class="nav navbar-right panel_toolbox">
-                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                    </li>
-                    <li><a class="close-link"><i class="fa fa-close"></i></a>
-                    </li>
-                  </ul>
-                  <div class="clearfix"></div>
-                </div>
-                <div class="x_content">
-                  <canvas id="lineChart"></canvas>
-                </div>
-              </div>
-            </div>
+                  <h2>带宽状态 </h2>
+                  <div id="inout" style="height:350px"></div>
+                    <script type="text/javascript">
+                    // 基于准备好的dom，初始化echarts实例
+                    var myChart = echarts.init(document.getElementById('inout'));
+        
+                    // 指定图表的配置项和数据
+                    var dataBeast=[660, 841, 521, 820, 578, 727, 598, 792, 701, 660, 729, 782, 660, 841, 541, 513, 792, 701, 660, 729, 782, 660, 841, 521, 820, 578, 727, 598];
+                    var dataBeauty=[541, 513, 792, 701, 660, 729, 782, 660, 841, 521, 820, 578, 727, 598, 660, 841, 521, 820, 578, 727, 598, 792, 701, 660, 729, 513, 792, 701];
+                    var xAxisData=['2017.12.01','2017.12.02','2017.12.03','2017.12.04','2017.12.05','2017.12.06','2017.12.07','2017.12.08','2017.12.09','2017.12.10','2017.12.11','2017.12.12','2017.12.13','2017.12.14','2017.12.15','2017.12.16','2017.12.17','2017.12.18','2017.12.19','2017.12.20','2017.12.21','2017.12.22','2017.12.23','2017.12.24','2017.12.25','2017.12.26','2017.12.27','2017.12.28'];
+                    var dataTotal=function(){
+                        var data=[];
+                        for(var i=0;i<dataBeauty.length;i++){
+                            data.push(dataBeauty[i]+dataBeast[i]);
+                        }
+                        
+                        return data;
+                    }
 
-            <div class="col-md-4 col-sm-4 col-xs-12">
-              <div class="x_panel tile fixed_height_320">
-                <div class="x_title">
-                  <h2>带宽 Out </h2>
-                  <ul class="nav navbar-right panel_toolbox">
-                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                    </li>
-                    <li><a class="close-link"><i class="fa fa-close"></i></a>
-                    </li>
-                  </ul>
+                    console.log(dataTotal());
+
+                    option = {
+                        color:['#35B798','#11565d','#BD3B39'],
+                        backgroundColor:'#fff',
+                        title: {
+                            text: '带宽状态',
+                            textStyle: {
+                                color:'#000',
+                                fontSize:18,
+                                fontWeight:'bold',
+                                
+                            },
+                        },
+                        legend:{
+                            right:'20%',
+                            textStyle: {
+                                color: '#666',
+                                fontSize: 12,
+                            },
+                            data:['In','Out','All'],
+                        },
+                        tooltip:{
+                            show:true,
+                            trigger: 'axis',
+                            axisPointer: {
+                                type:'cross',
+                                crossStyle:{
+                                  color:'#ddd',
+                                  
+                              },
+
+                            },
+                        },
+                        
+                        toolbox:{
+                            right:20,
+                            feature:{
+                                saveAsImage: {},
+                                restore: {},
+                                magicType: {
+                                    type:['line','bar']
+                                },
+                                // brush: {},
+                            }
+                        },
+                        
+                        grid:{
+                            left:5,
+                            right:20,
+                            top:80,
+                            bottom:50,
+                            containLabel:true,
+                        },
+                        xAxis: {
+                          show:true,
+                          
+                          axisLabel:{
+                            interval:0,
+                            rotate:-20,
+                            margin: 30,
+                            textStyle:{
+                                  color:'#000',
+                                  align: 'center'
+                                
+                            },
+                          },
+                          axisTick:{
+                              alignWithLabel:true,
+                              lineStyle:{
+                                  color:'#ddd',
+                                  
+                              },
+                          },
+                          data:xAxisData,
+                        },
+                        yAxis: [
+                            {
+                                type:'value',
+                                name:'访问量',
+                                nameTextStyle:{
+                                    color:'#000',
+                                },
+                                axisLabel:{
+                                textStyle:{
+                                      color:'#000',
+                                },
+                                },
+                                axisTick:{
+                                  alignWithLabel:true,
+                                  lineStyle:{
+                                      color:'#000',
+                                      
+                                  },
+                                },
+                                splitLine:{
+                                    show:false,
+                                },
+                            },
+                            {
+                                type:'value',
+                                name:' ',
+                                nameTextStyle:{
+                                    color:'#fff',
+                                },
+                                axisLabel:{
+                                textStyle:{
+                                      color:'#fff',
+                                },
+                                },
+                                axisTick:{
+                                  alignWithLabel:false,
+                                  lineStyle:{
+                                      color:'#fff',
+                                      
+                                  },
+                                },
+                                splitLine:{
+                                    show:false,
+                                },
+                            },
+                        ],
+                        dataZoom: [{
+                            show: true,
+                            height:20,
+                            bottom:10,
+                            start: 10,
+                            end: 60,
+                            handleIcon: 'path://M306.1,413c0,2.2-1.8,4-4,4h-59.8c-2.2,0-4-1.8-4-4V200.8c0-2.2,1.8-4,4-4h59.8c2.2,0,4,1.8,4,4V413z',
+                            handleSize: '100%',
+                            handleStyle:{color:"#d3dee5",},
+                            textStyle:{color:"#000"}, 
+                                borderColor:"#90979c",
+                            }, 
+                            { type: "inside"}
+                        ],
+                        series: [
+                            {
+                                type: 'bar',
+                                name:'In',
+                                stack:'带宽',
+                                data:dataBeast,
+                                label: {
+                                    normal: {
+                                        show:true,
+                                        position: 'insideTop',
+                                        offset:[0,20],
+                                        textStyle:{
+                                          color:'#fff',
+                                        },
+                                    },
+                                    emphasis: {
+                                        textStyle:{
+                                          color:'#fff',
+                                        }, 
+                                    },
+                                },
+                            },
+                            {
+                                type: 'bar',
+                                name:'Out',
+                                stack:'带宽',
+                                data:dataBeauty,
+                                label: {
+                                    normal: {
+                                        show:true,
+                                        position: 'insideTop',
+                                        offset:[0,20],
+                                        textStyle:{
+                                          color:'#fff',
+                                        },
+                                    },
+                                    emphasis: {
+                                      textStyle:{
+                                          color:'#fff',
+                                        }, 
+                                    },
+                                },
+                            },
+                            {
+                                type: 'line',
+                                name:'All',
+                                yAxisIndex:1,
+                                stack:'带宽',
+                                data:dataTotal(),
+                                label: {
+                                    normal: {
+                                        show:true,
+                                        position: 'insideTop',
+                                        offset: [0,-30],
+                                        textStyle:{
+                                          color:'#666',
+                                        }, 
+                                    },
+                                    emphasis: {
+                                        textStyle:{
+                                          color:'#fff',
+                                        },  
+                                    },
+                                },
+                                // symbol:'image://../imgs/point1.png',
+                                symbolSize:8,
+                                itemStyle: {
+                                        normal: {
+                                            // "color": "#01B3D7",
+                                            barBorderRadius: 0,
+                                            label: {
+                                                show:false,
+                                                position: "top",
+                                                formatter: function(p) {
+                                                    return p.value > 0 ? (p.value) : '';
+                                                }
+                                            }
+                                        }
+                                    },
+                                lineStyle: {
+                                        normal: {
+                                        color: '#BD3B39',
+                                        width: 1,
+                                    
+                                        },
+                                    },
+                            },
+                        ]
+                    };
+                    // 使用刚指定的配置项和数据显示图表。
+                    myChart.setOption(option);
+                    </script>
                   <div class="clearfix"></div>
-                </div>
-                <div class="x_content">
-                  <canvas id="lineChart2"></canvas>
-                </div>
+                  </div>
               </div>
             </div>
+          </div>
+
+          <div class="row">
+
+
           </div>
 
 
